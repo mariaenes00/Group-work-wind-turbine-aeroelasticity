@@ -3,15 +3,18 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from recorder import Recorder, TimeRecorder
+from aerodynamics import Aerodynamics, NoAerodynamics
+from recorder import Recorder, time_recorder
 from structure import Structure
 from wind import NoWind, Wind
 
 
 class Simulation:
+
     def __init__(
         self,
         structure: Structure,
+        aerodynamics: Aerodynamics = NoAerodynamics(),
         wind: Wind = NoWind(),
         recorders: Recorder | list[Recorder] | None = None,
     ) -> None:
@@ -29,7 +32,8 @@ class Simulation:
         """
         self.structure = structure
         self.wind = wind
-        self.model_parts = [self.structure, self.wind]
+        self.aerodynamics = aerodynamics
+        self.model_parts = [self.wind, self.aerodynamics, self.structure]
         self.time = 0
         self.dt = 0
         self.step_idx = 0
@@ -37,7 +41,7 @@ class Simulation:
         recorders = recorders or []
         self.recorders = recorders if isinstance(recorders, list) else [recorders]
 
-    def simulate(self, dt: float, T: float):
+    def run(self, dt: float, T: float):
         """
         Run the simulation.
 
@@ -48,12 +52,16 @@ class Simulation:
         T : float
             Time the simulation runs for.
         """
-        self.recorders.append(TimeRecorder(int(T / dt)))
+        self.recorders.append(time_recorder())
         self.dt = dt
 
         n_sim_steps = int(T / dt)
         for recorder in self.recorders:
             recorder.update_n_steps(n_sim_steps)
+
+        for part in self.model_parts:
+            if hasattr(part, "simulation_init"):
+                part.simulation_init(self)
 
         for step_idx in range(n_sim_steps):
             self.step_idx = step_idx
@@ -100,5 +108,20 @@ class Simulation:
                 print(f"Skipping '{save_to.as_posix()}' because it already exists and 'overwrite=False'")
                 continue
             dims = data["dims"]
-            values = data["values"]
+            values = data["values"] if len(data["values"].shape) > 1 else np.atleast_2d(data["values"]).T
             pd.DataFrame(time | {dim: values[:, i] for i, dim in enumerate(dims)}).to_csv(save_to, index=False)
+
+
+if __name__ == "__main__":
+    from recorder import lift_recorder
+    from structure import RigidStructure
+    from wind import ShearWind
+
+    sim = Simulation(
+        RigidStructure(0.62),
+        Aerodynamics(dynamic_wake=False, oye=False),
+        ShearWind(119, 10, 0.2),
+        lift_recorder("lift", 0, 15),
+    )
+    sim.run(0.1, 30)
+    sim.save_recorders("sim_data", overwrite=True)

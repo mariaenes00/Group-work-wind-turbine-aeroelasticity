@@ -1,14 +1,18 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from recorder import BladePosition1Recorder, BladeVelocity5Recorder, Wind5Recorder
+from recorder import (
+    blade_position_1_recorder,
+    blade_velocity_5_recorder,
+    wind_5_recorder,
+)
 from simulation import Simulation
 from structure import RigidStructure
 from wind import ConstantWind, ShearWind, WindWithTower
 
 do = {
-    "1": True,
-    "2": True,
+    "1": False,
+    "2": False,
     "3": True,
     "4": True,
     "5": True,
@@ -22,9 +26,9 @@ if do["1"]:
     structure = RigidStructure(omega_init)
 
     recorder_name = "blade_pos_part1"
-    blade_pos_recorder = BladePosition1Recorder(name=recorder_name, blade_idx=0, element_idx=10)
+    blade_pos_recorder = blade_position_1_recorder(name=recorder_name, blade_idx=0, element_idx=10)
     simulation = Simulation(structure, recorders=blade_pos_recorder)
-    simulation.simulate(dt, T)
+    simulation.run(dt, T)
     simulation.save_recorders("sim_data", overwrite=True)
 
     data = simulation.get_recorders()
@@ -46,9 +50,9 @@ if do["2"]:
         structure = RigidStructure(omega_init, yaw=yaw)
 
         recorder_name = "blade_pos_part2"
-        blade_pos_recorder = BladePosition1Recorder(name=recorder_name, blade_idx=0, element_idx=10)
+        blade_pos_recorder = blade_position_1_recorder(name=recorder_name, blade_idx=0, element_idx=10)
         simulation = Simulation(structure, recorders=blade_pos_recorder)
-        simulation.simulate(dt, T)
+        simulation.run(dt, T)
 
         data = simulation.get_recorders()
         ax.plot(data[recorder_name]["values"][:, 1], data[recorder_name]["values"][:, 0], label=f"{yaw=}$\degree$")
@@ -72,10 +76,10 @@ if do["3"]:
 
         shear_wind = ShearWind(119, 10, 0.2)
         recorder_name = "vel_recorder_part3"
-        vel_recorder = BladeVelocity5Recorder(name=recorder_name, blade_idx=0, element_idx=10)
+        vel_recorder = blade_velocity_5_recorder(name=recorder_name, blade_idx=0, element_idx=10)
 
-        simulation = Simulation(structure, shear_wind, vel_recorder)
-        simulation.simulate(dt, T)
+        simulation = Simulation(structure, wind=shear_wind, recorders=vel_recorder)
+        simulation.run(dt, T)
 
         data = simulation.get_recorders()
         azimuth = data["time"]["values"] * omega_init / (2 * np.pi) * 360
@@ -99,10 +103,10 @@ if do["4"]:
     tower_radius = np.asarray([[0, 3.32], [119, 3.32]])
     shear_wind = WindWithTower(0, 0, tower_radius, ConstantWind(10))
     recorder_name = "vel_recorder_part4"
-    vel_recorder = Wind5Recorder(name=recorder_name, blade_idx=0, element_idx=10)
+    vel_recorder = wind_5_recorder(name=recorder_name, blade_idx=0, element_idx=10)
 
-    simulation = Simulation(structure, shear_wind, vel_recorder)
-    simulation.simulate(dt, T)
+    simulation = Simulation(structure, wind=shear_wind, recorders=vel_recorder)
+    simulation.run(dt, T)
     simulation.save_recorders("sim_data", overwrite=True)
 
     data = simulation.get_recorders()
@@ -139,11 +143,11 @@ if do["5"]:
 
     # Define recorder to save wind as seen in blade coordinate system (5)
     recorder_name = "wind_recorder_part5"
-    wind_recorder = Wind5Recorder(name=recorder_name, blade_idx=0, element_idx=10)
+    wind_recorder = wind_5_recorder(name=recorder_name, blade_idx=0, element_idx=10)
 
     # Set up simulation, run, and save wind recorder data
-    simulation = Simulation(structure, shear_wind, wind_recorder)
-    simulation.simulate(dt, T)
+    simulation = Simulation(structure, wind=shear_wind, recorders=wind_recorder)
+    simulation.run(dt, T)
     simulation.save_recorders("sim_data", overwrite=True)
 
     # Get data (saving above not needed for this) for plotting

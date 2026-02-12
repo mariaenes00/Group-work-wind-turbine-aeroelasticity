@@ -49,10 +49,15 @@ class Structure(ABC):
         pitch_init : list, optional
             The initial pitch angles for each blade. From this, the number of blades are defined, by default [0, 0, 0]
         """
-        r = pd.read_csv(file_blade)["r"].to_numpy()
+        df_blade_data = pd.read_csv(file_blade)
+        r = df_blade_data["radius"].to_numpy()
         self.r = r
         self.R = r[-1]
         self.r_hub = r[0]
+        self.chord = df_blade_data["chord"].to_numpy()
+        self.twist = np.deg2rad(df_blade_data["twist"].to_numpy())
+        self.rel_thickness = df_blade_data["rel_thickness"].to_numpy()
+        self.n_elements = r.size
 
         self.hub_height = hub_height
         self.l_shaft = l_shaft

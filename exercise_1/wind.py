@@ -66,7 +66,7 @@ class ShearWind(Wind):
 
     def __call__(self, xyz):
         xyz = np.atleast_2d(xyz)
-        return np.c_[np.zeros_like(xyz[:, 0]), np.zeros_like(xyz[:, 0]), self.shear(xyz[:, 0])]
+        return np.c_[np.zeros_like(xyz[:, 0]), np.zeros_like(xyz[:, 0]), self.shear(xyz[:, 0])].squeeze()
 
     def step(self, simulation):
         # Nothing needs to happen here either.
