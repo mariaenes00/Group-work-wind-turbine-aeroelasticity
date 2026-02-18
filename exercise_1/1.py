@@ -11,8 +11,8 @@ from structure import RigidStructure
 from wind import ConstantWind, ShearWind, WindWithTower
 
 do = {
-    "1": False,
-    "2": False,
+    "1": True,
+    "2": True,
     "3": True,
     "4": True,
     "5": True,

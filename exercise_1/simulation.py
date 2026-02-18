@@ -3,7 +3,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from aerodynamics import Aerodynamics, NoAerodynamics
 from recorder import Recorder, time_recorder
 from structure import Structure
 from wind import NoWind, Wind
@@ -14,7 +13,6 @@ class Simulation:
     def __init__(
         self,
         structure: Structure,
-        aerodynamics: Aerodynamics = NoAerodynamics(),
         wind: Wind = NoWind(),
         recorders: Recorder | list[Recorder] | None = None,
     ) -> None:
@@ -32,8 +30,7 @@ class Simulation:
         """
         self.structure = structure
         self.wind = wind
-        self.aerodynamics = aerodynamics
-        self.model_parts = [self.wind, self.aerodynamics, self.structure]
+        self.model_parts = [self.wind, self.structure]
         self.time = 0
         self.dt = 0
         self.step_idx = 0
@@ -58,10 +55,6 @@ class Simulation:
         n_sim_steps = int(T / dt)
         for recorder in self.recorders:
             recorder.update_n_steps(n_sim_steps)
-
-        for part in self.model_parts:
-            if hasattr(part, "simulation_init"):
-                part.simulation_init(self)
 
         for step_idx in range(n_sim_steps):
             self.step_idx = step_idx
@@ -113,15 +106,12 @@ class Simulation:
 
 
 if __name__ == "__main__":
-    from recorder import lift_recorder
     from structure import RigidStructure
     from wind import ShearWind
 
     sim = Simulation(
         RigidStructure(0.62),
-        Aerodynamics(dynamic_wake=False, oye=False),
         ShearWind(119, 10, 0.2),
-        lift_recorder("lift", 0, 15),
     )
     sim.run(0.1, 30)
     sim.save_recorders("sim_data", overwrite=True)
