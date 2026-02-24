@@ -66,7 +66,7 @@ if do["2"]:
     plt.show()
 
 if do["3"]:
-    omega_init = 0.62
+    omega_init = 0.62 
     T = 2 * np.pi / omega_init
     dt = T / 100
 
