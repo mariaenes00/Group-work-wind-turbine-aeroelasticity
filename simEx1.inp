@@ -1,0 +1,17 @@
+3 		Three-dimensional field
+1 		Only one component to be simulated,
+1 		namely the u -component.
+4096 		N 1
+32 		N 2
+32 		N 3
+6144 		L 1 in meters
+80 		L 2
+80 		L 3
+terrain 	Complex terrain calculation
+P_01_000.dat 	LINCOM output file
+1 		The first (and only) height in the LINCOM file.
+False 		Effects of orography are not taken into account,
+True 		but effect of roughness changes are.
+0 		Spectrum type
+-5 		Random seed
+sim1 		Name of the output file
