@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e045cfa2-da3e-46a4-b102-a7f050c99ea3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/CODE3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/CODE3.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q2_thrust_per_blade_and_total_kN.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q2_thrust_per_blade_and_total_kN.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q2_total_power_vs_time_kW.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q2_total_power_vs_time_kW.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q3_induced_velocity_Wy_Wz_at_r65p75.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q3_induced_velocity_Wy_Wz_at_r65p75.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q3_pitch_schedule.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q3_pitch_schedule.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q3_power_vs_time_kW.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q3_power_vs_time_kW.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q3_thrust_vs_time_kN.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q3_thrust_vs_time_kN.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q4_PSD_pz_probe.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q4_PSD_pz_probe.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q4_PSD_total_thrust.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q4_PSD_total_thrust.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q4_pz_probe_time_history.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q4_pz_probe_time_history.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_plots/Q4_total_thrust_time_history.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/pdf_plots/Q4_total_thrust_time_history.pdf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3A1yZOB9n9En08Y4Cga3wRPQpqw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e045cfa2-da3e-46a4-b102-a7f050c99ea3" name="Changes" comment="" />
+      <created>1771774426180</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771774426180</updated>
+    </task>
+    <servers />
+  </component>
+</project>
