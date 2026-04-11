@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e045cfa2-da3e-46a4-b102-a7f050c99ea3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASSIGN2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ASSIGN2.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/01_below_rated_Cp_vs_V0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/02_below_rated_lambda_vs_V0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/03_below_rated_omega_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/04_below_rated_Pmech_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/05_above_rated_pitch_vs_V0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/06_steady_power_vs_V0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/07_above_rated_omega_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/08_above_rated_pitch_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/09_above_rated_power_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/10_turbulent_omega_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/11_turbulent_pitch_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/12_turbulent_Pel_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/13_turbulent_Pmech_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/14_turbulent_combined_power_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/15_turbulent_thrust_response.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment 2/16_turbulent_lambda_response.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +61,11 @@
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
